@@ -87,7 +87,7 @@ let
         # println("$t $Sz")
 
         corr_firstterm = exp(-im*energy*t)*inner(sp_psi,finalpsi)
-        corr = corr_firstterm - exp_σz1^2
+        corr = abs(corr_firstterm) - real(exp_σz1^2)
         println("$t $corr")
         push!(corrdata,corr)
         push!(data, (t, corr))
